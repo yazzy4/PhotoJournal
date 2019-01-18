@@ -13,7 +13,10 @@
 		9107952D21ED15D200C4D3F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9107952C21ED15D200C4D3F0 /* Assets.xcassets */; };
 		9107953021ED15D200C4D3F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9107952E21ED15D200C4D3F0 /* LaunchScreen.storyboard */; };
 		9107953821ED17AB00C4D3F0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9107953721ED17AB00C4D3F0 /* DetailViewController.swift */; };
+		9176D79A21EEBBC600077D5D /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176D79921EEBBC600077D5D /* DataPersistenceManager.swift */; };
 		9181C55C21EE95D100292B08 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181C55B21EE95D100292B08 /* PhotoCollectionViewCell.swift */; };
+		9181C55E21EEBA4D00292B08 /* PhotoJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181C55D21EEBA4D00292B08 /* PhotoJournal.swift */; };
+		9181C56121EEBAC700292B08 /* PhotoJournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181C56021EEBAC700292B08 /* PhotoJournalModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +28,10 @@
 		9107952F21ED15D200C4D3F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9107953121ED15D200C4D3F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9107953721ED17AB00C4D3F0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9176D79921EEBBC600077D5D /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		9181C55B21EE95D100292B08 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		9181C55D21EEBA4D00292B08 /* PhotoJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournal.swift; sourceTree = "<group>"; };
+		9181C56021EEBAC700292B08 /* PhotoJournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournalModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				9107952521ED15D000C4D3F0 /* AppDelegate.swift */,
-				9107953C21ED17F300C4D3F0 /* Views */,
+				9181C55F21EEBA5700292B08 /* Models */,
 				9107953921ED17C000C4D3F0 /* Controllers */,
+				9107953C21ED17F300C4D3F0 /* Views */,
 				9107952921ED15D000C4D3F0 /* Main.storyboard */,
 				9107952C21ED15D200C4D3F0 /* Assets.xcassets */,
 				9107952E21ED15D200C4D3F0 /* LaunchScreen.storyboard */,
@@ -84,6 +91,16 @@
 				9181C55B21EE95D100292B08 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9181C55F21EEBA5700292B08 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9181C55D21EEBA4D00292B08 /* PhotoJournal.swift */,
+				9181C56021EEBAC700292B08 /* PhotoJournalModel.swift */,
+				9176D79921EEBBC600077D5D /* DataPersistenceManager.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +176,10 @@
 			files = (
 				9107953821ED17AB00C4D3F0 /* DetailViewController.swift in Sources */,
 				9181C55C21EE95D100292B08 /* PhotoCollectionViewCell.swift in Sources */,
+				9181C55E21EEBA4D00292B08 /* PhotoJournal.swift in Sources */,
+				9176D79A21EEBBC600077D5D /* DataPersistenceManager.swift in Sources */,
 				9107952821ED15D000C4D3F0 /* PhotoViewController.swift in Sources */,
+				9181C56121EEBAC700292B08 /* PhotoJournalModel.swift in Sources */,
 				9107952621ED15D000C4D3F0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Yaz-Burrell.PhotoJournal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -334,7 +354,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Yaz-Burrell.PhotoJournal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
