@@ -35,7 +35,7 @@ class PhotoViewController: UIViewController {
     @IBAction func editButtonPressed(_ sender: UIButton) {
         let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: {(action ) in
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(action ) in
         PhotoJournalModel.deletePost( atIndex: sender.tag)
             self.allJournalImages = PhotoJournalModel.getPhotoJournal()
         })
@@ -47,28 +47,27 @@ class PhotoViewController: UIViewController {
             self.present(viewController, animated: true, completion: nil)
             
         })
-        let shareAction = UIAlertAction(title: "Save", style: .default, handler: {(action ) in
+        let shareAction = UIAlertAction(title: "Share", style: .default, handler: {(action ) in
+            let shareText = self.allJournalImages[sender.tag].description
             
+            if let image = UIImage(data:self.allJournalImages[sender.tag].imageData) {
+                let vc = UIActivityViewController(activityItems: [shareText, image], applicationActivities: [])
+                self.present(vc, animated: true)
+            }
             
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action ) in })
         
-        
-        
-        optionMenu.addAction(deleteAction)
+
         optionMenu.addAction(editAction)
         optionMenu.addAction(shareAction)
+        optionMenu.addAction(deleteAction)
         optionMenu.addAction(cancelAction)
         self.present(optionMenu, animated: true, completion: nil)
     }
     
     
-    
-    
-    
-    }
-    
-
+}
 
 extension PhotoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
